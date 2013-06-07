@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>仕様書とテストのライフサイクル</title>
+	<style>
+	/* Fonts courtesy of Exljbris and Font Squirrel */
+	@font-face {
+		font-family: 'MuseoSlab';
+		font-weight: normal;
+		font-style: normal;
+		src: url('fonts/Museo_Slab_500.eot');
+		src: local('Museo Slab 500'), local('MuseoSlab-500'), url('fonts/Museo_Slab_500.woff') format('woff'), url('fonts/Museo_Slab_500.otf') format('opentype'), url('fonts/Museo_Slab_500.svg#MuseoSlab-500') format('svg');
+	}
+
+	@font-face {
+		font-family: 'MuseoSlab';
+		font-weight: normal;
+		font-style: italic;
+		src: url('fonts/Museo_Slab_500italic.eot');
+		src: local('Museo Slab 500 Italic'), local('MuseoSlab-500Italic'), url('fonts/Museo_Slab_500italic.woff') format('woff'), url('fonts/Museo_Slab_500italic.otf') format('opentype'), url('fonts/Museo_Slab_500italic.svg#MuseoSlab-500Italic') format('svg');
+	}
+	@font-face {
+		font-family: 'MuseoSans';
+		font-weight: normal;
+		font-style: normal;
+		src: url('fonts/Museo_Sans_500.eot');
+		src: local('Museo Sans 500'), local('MuseoSans-500'), url('fonts/Museo_Sans_500.woff') format('woff'), url('fonts/Museo_Sans_500.otf') format('opentype'), url('fonts/Museo_Sans_500.svg#MuseoSans-500') format('svg');
+	}
+
+	@font-face {
+		font-family: 'MuseoSans';
+		font-weight: normal;
+		font-style: italic;
+		src: url('fonts/Museo_Sans_500italic.eot');
+		src: local('Museo Sans 500 Italic'), local('MuseoSans-500Italic'), url('fonts/Museo_Sans_500_italic.woff') format('woff'), url('fonts/Museo_Sans_500_italic.otf') format('opentype'), url('fonts/Museo_Sans_500_italic.svg#MuseoSans') format('svg');
+	}	</style>
+	<link href="slideshow.css" rel="stylesheet" />
+	<link href="theme.css" rel="stylesheet" />
+	<link href="talk.css" rel="stylesheet" />
+	<script src="prefixfree.min.js"></script>
+</head>
+<body data-duration="15">
+
+<header id="intro" class="slide">
+	<h1>仕様書とテストの ライフサイクル</h1>
+	<p class="center">スタッドホルム・オリ</p>
+</header>
+
+<section>
+	<header class="slide">
+		<h1>仕様書</h1>
+	</header>
+	
+	<section class="slide" title="Why specs?">
+		<h2>仕様書の必要は</h2>
+		<p class="important delayed center v-space">インターオペラビリティー</p>
+		<p class="important delayed center">相互運用性</p>
+		<p class="presenter-notes"><span lang="en">Without this we’re screwed. Remember the browser wars</span></p>
+	</section>
+	
+	<section class="slide">
+		<h2>スペックはどこから？</h2>
+		<ul>
+			<li class="delayed">インプリメンタ（作成者）</li>
+			<li class="delayed">W3C（例えば、CSS作業グループ）</li>
+			<li class="delayed">当事者：私達もありえる</li>
+		</ul>
+		<p class="presenter-notes"><span lang="en">All three groups should be involved in a spec’s development</span></p>
+	</section>
+	
+	<section class="slide">
+		<h2>W3C仕様書のステージ</h2>
+		<ol>
+			<li class="delayed">下書き：<span lang="en">Editor’s Draft (ED)</span></li>
+			<li class="delayed">草案：<span lang="en">Working Draft (WD)</span></li>
+			<li class="delayed">最終草案：<span lang="en">Last Call Working Draft (LC, LCWD)</span></li>
+			<li class="delayed">勧告候補：<span lang="en">Candidate Recommendation (CR)</span></li>
+			<li class="delayed">勧告案：<span lang="en">Proposed Recommendation (PR)</span></li>
+			<li class="delayed">W3C勧告：<span lang="en">Recommendation (REC)</span></li>
+		</ol>
+		<p class="right" lang="en">(<a href="http://www.w3.org/Consortium/Process/tr.html">Ref</a>)</p>
+	</section>
+
+	<section class="slide">
+		<h2>W3C仕様書のステージ</h2>
+		<p class="center v-space">W3C勧告 ＝ 仕様書 ＝ スタンダード</p>
+	</section>
+
+	<section class="slide">
+		<h3>下書き　<span lang="en">Editor’s Draft (ED)</span></h3>
+		<ul class="delayed">
+			<li>だれでも書けるが、まだ正式な裏付けはない</li>
+			<li>正式になって、下書きはスペックの最新バージョン</li>
+		</ul>
+		<p class="presenter-notes"><span lang="en">→ Exploring</span></p>
+	</section>
+
+	<section class="slide">
+		<h3>草案　<span lang="en">Working Draft (WD)</span></h3>
+		<ul class="delayed">
+			<li>ワーキンググループから賛成</li>
+			<li>スペックを書いたり、フィードバックを貰ったり、問題を直したりの作業</li>
+			<li>（最初のリリースは「<span lang="en">First Public Working Draft (FPWD)</span>」）</li>
+		</ul>
+		<p class="presenter-notes"><span lang="en">→ Design phase</span></p>
+	</section>
+
+	<section class="slide">
+		<h3>最終草案　<span lang="en">Last Call Working Draft (LC, LCWD)</span></h3>
+		<ul class="delayed">
+			<li>もうそろそろ出来たら、フィードバックお願い</li>
+			<li>問題を修正する期限を決める</li><!-- しゅうせい　きげん -->
+		</ul>
+		<p class="presenter-notes"><span lang="en">→ Transition</span></p>
+	</section>
+
+	<section class="slide">
+		<h3>勧告候補　<span lang="en">Candidate Recommendation (CR)</span></h3>
+		<ul class="delayed">
+			<li>テストの作業（私達だ！）</li>
+			<li>その勧告に興味があるインプリメンタは作業を始める</li>
+			<li>仕様策定者は新しい問題を直す</li>
+			<li>スペックに「<span lang="en">CR Exit Criteria</span>」が書いてある</li>
+		</ul>
+		<p class="presenter-notes"><span lang="en">→ Test, implement, refine</span></p>
+	</section>
+
+	<section class="slide">
+		<h3>勧告案　<span lang="en">Proposed Recommendation (PR)</span></h3>
+		<p class="delayed">ここまですれば、</p>
+		<ul class="delayed">
+			<li>２つの別々、正しいインプリメンテーションが必要</li>
+			<li>エディターは全部の問題を確認した</li>
+			<li><strong>テストも必要</strong></li><!-- ← not mentioned in Process <_< -->
+		</ul>
+		<p class="presenter-notes"><span lang="en">→ Transition</span></p>
+	</section>
+
+	<section class="slide">
+		<h3>W3C勧告　<span lang="en">Recommendation (REC)</span></h3>
+		<ul class="delayed">
+			<li>レコメンデーションまで行けば、W3Cの<span lang="en">Advisory Committee</span>は確認の必要</li>
+			<li>小さい修正だけ</li><!-- しゅうせい -->
+		</ul>
+		<p class="presenter-notes"><span lang="en">→ Maintenance</span></p>
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/spec-progress-1.png);">
+		<h3>スペックの一覧</h3><!-- いちらん -->
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/spec-progress-2.png);">
+		<h3>スペックの一覧</h3><!-- いちらん -->
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/spec-progress-3.png);">
+		<h3>スペックの一覧</h3><!-- いちらん -->
+	</section>
+
+	<section class="slide">
+		<h3>スペックの一覧</h3><!-- いちらん -->
+		<p class="center v-space">http://www.w3.org/TR/…</p>
+		<p class="center delayed" lang="en">TR = Trash</p>
+	</section>
+
+	<section class="slide">
+		<h3>基本</h3>
+		<ul>
+			<li class="delayed">草案（<span lang="en">Working Draft</span>）：スペックをデザインする</li>
+			<li class="delayed">勧告候補（<span lang="en">Candidate Recommendation</span>）：テスト、実施</li>
+			<li class="delayed">W3C勧告（<span lang="en">Recommendation</span>）：メンテナンス</li>
+		</ul>
+		<p class="delayed">→ http://www.w3.org/Style/CSS/current-work</p>
+	</section>
+
+	<section class="slide">
+		<h3 lang="en">WHATWG “living standard”</h3>
+		<blockquote class="delayed">
+			<ol class="semantic-list" lang="en">
+				<li>Idea; yet to be specified</li>
+				<li>First draft</li>
+				<li>Working draft</li>
+				<li>Last call for comments</li>
+				<li>Awaiting implementation feedback</li>
+				<li>Implemented and widely deployed</li>
+			</ol>
+			<p class="right">(<a href="http://www.html5.jp/trans/whatwg_html5faq.html#When_will_HTML5_be_finished.3F">Ref</a>)</p>
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<h3 lang="en">WHATWG “living standard”</h3>
+		<ul>
+			<li>「生きている仕様」：この段階は同じドキュメントにあります：http://whatwg.org/C/</li>
+			<li class="delayed">CSSWGの場合：http://dev.w3.org/csswg/</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>W3Cスペックのあり方</h2>
+		<ul class="delayed">
+			<li>実施とテストの作業に問題が良く見つかる</li>
+			<li>前か次の段階、どちらも行ける</li>
+			<li>スペックは分かれたり、集まったり、もうそのまま放っておかれる場合もありえる</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>例：<span lang="en">Flexbox</span></h2>
+		<!-- todo: check if this should be semantic-list -->
+		<div class="two-up">
+			<div class="left">
+				<ul class="delayed semantic-list">
+					<li><em><time>2004-04-27:</time> WD <code>box</code></em></li>
+					<li><em><time>2006-09-15:</time> WD <code>box</code></em></li>
+					<li><em><time>2007-10-05:</time> WD <code>box</code></em></li>
+				</ul>
+				<ul class="delayed semantic-list">
+					<li><time>2009-07-23:</time> FPWD <code>box</code></li>
+				</ul>
+				<ul class="delayed semantic-list">
+					<li><time>2011-03-22:</time> WD <code>flexbox</code></li>
+					<li><time>2011-11-29:</time> WD <code>flexbox</code></li>
+					<li><time>2012-03-22:</time> WD <code>flexbox</code></li>
+				</ul>
+			</div>
+			<div class="right">
+			<ul class="delayed semantic-list">
+				<li><time>2012-06-12:</time> LCWD <code>flex</code></li>
+				<li><time>2012-09-18:</time> CR <code>flex</code></li>
+			</ul>
+			<ul class="semantic-list delayed">
+				<li><time>2013-04-11:</time> ED <code>flex</code></li>
+				<li>↑ 最新スペックは下書き</li>
+			</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>例：<span lang="en">Flexbox</span></h2>
+		<p class="center v-space">TR = <span lang="en">Trash</span>を忘れないでね</p>
+	</section>
+
+</section>
+
+<section>
+	<header class="slide">
+		<h1>テスト</h1>
+	</header>
+	
+	<section class="slide">
+		<h2>テストの歴史</h2>
+		<ul class="delayed">
+			<li>テストは（ほぼ）無かった</li>
+			<li>スペックは適当、例えばHTML5前にエラーの動きを書かなかった</li>
+			<li>インプリメンタはそれぞれ解釈する → 私達に問題</li>
+			<li>インプリメンタは自分のテストを作った → 重複</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>なぜテストを作る？</h2>
+		<ul class="delayed">
+			<li>インプリメンタは当たった確認</li>
+			<li>デヴェロパーに相互運用性</li>
+			<li>スペックの仕様策定者にも確認</li>
+			<li>W3Cはテストスイートを使って、インプレメンタレポートを作る</li>
+			<li clas="important">ウェブはもう広すぎる：テストは必要</li><!-- todo: check JP and formatting -->
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>テストの<br />ライフサイクル</h2>
+		<ul class="delayed">
+			<li>スペックはあまり変わらなくなって、テストを作り始め（勧告候補ぐらい）</li>
+			<li>作ったテストを確認後に、W3Cのテストスイートに入れる</li>
+			<li>スペックが変わったら、テストも変わる</li>
+			</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>テストの作り方</h2>
+		<ul class="delayed">
+			<li>テストは１つだけの事に作る</li>
+			<li>テストはシンプルに</li>
+			<li>出来れば、「<span lang="en">TestHarness.js</span>」に自動で動くように</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>テストは足りなかったら…</h2>
+		<ul class="delayed">
+			<li>スペック問題は見つけない → 直さなかん</li>
+			<li>ブラウザー問題も出る → ブラウザーバグ、相互運用性の問題</li>
+			<li>最近、テストが足りなかったら、勧告候補から勧告案に行けない</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>テストが足りない例</h2>
+		<p class="delayed" lang="en">“CSS3 Transitions: Thank God We Have A Specification!” by Rodney Rehm</p>
+		<p class="delayed">ロッドニーさんはCSSアニメーションのスペックを細かくテストして、いろんなブラウザーバク、スペック問題、相互運用性問題を見つけた。</p>
+		<p class="delayed">彼のテストはテストスイートに入っていて、そして、バグリポートとスペック修正（しゅうせい）も出ます。</p>
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/css3-animations-test.png);">
+	</section>
+
+	<!-- <section class="slide light image" style="background-image: url(img/css3-animations-tests-detail.png);">
+	</section> -->
+
+	<section class="slide light image" style="background-image: url(img/css3-animations-tests-summary.png);">
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/css3-animations-article.png);">
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/css3-animations-test-suite.png);">
+	</section>
+
+	<!-- Todo: article screenshot, tests list -->
+</section>
+
+<section>
+	<header class="slide">
+		<h1>ヘルプ！</h1>
+	</header>
+	
+	<section class="slide">
+		<h2>なぜ？</h2>
+		<p class="delayed">私に「相互運用性」は１番大事</p>
+		<ul class="delayed">
+			<li>テストがあれば、相互運用性は上がります</li>
+			<li>相互運用性はデヴェロパーに助かる</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>これからどうする</h2>
+		<ul>
+			<li class="delayed">明日テストを作ろう！</li>
+			<li class="delayed">その後もテストを作ろう！</li>
+			<li class="delayed">他のスペックの作業にも手伝いましょう！</li>
+		</ul>
+		<p class="delayed" lang="en">→ Move the Web Forward http://www.movethewebforward.org/
+</p>
+	</section>
+	
+	<section class="slide">
+		<h3 lang="en">Save the Web,<br />Write Some Tests!</h3>
+		<h3 class="delayed">良いウェブ未来を<br />一緒に作ろう！</h3>
+	</section>
+
+	<section class="slide">
+		<h2>スペックのリンク</h2>
+		<ul>
+			<li><a href="http://www.w3.org/Consortium/Translation/Japanese">W3Cの仕様書等の文書の日本語訳集</a></li>
+			<li><a href="http://dev.w3.org/csswg/">CSSWGの下書きスペック</a>（英語）</li>
+			<li><a href="http://momdo.s35.xrea.com/web-html-test/CSS3-ja/" title="CSS3の日本語訳集 - 血統の森 web実験小屋">CSS3の日本語訳集</a>（もんどさん）</li>
+			<li><a href="http://whatwg.org/C/">WHATWGの下書きスペック</a>（英語）</li>
+			<li><a href="http://fantasai.inkedblade.net/weblog/2011/inside-csswg/">Inside CSSWG</a>, by fantasai（英語）</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>テストのリンク</h2>
+		<ul>
+			<li>CSSWGのテストスイート：<a href="https://hg.csswg.org/test/">Mecurial</a>と<a href="https://github.com/w3c/csswg-test">GitHub</a></li>
+			<li><a href="http://wiki.csswg.org/test">CSSWGのテストウィキ</a>（英語）</li>
+			<li><a href="https://github.com/w3c/web-platform-tests">W3Cの「Web Platform」テストスイート</a>（GitHub）</li>
+			<li><a href="http://www.w3.org/html/wg/wiki/Testing">W3CのHTMLWGのテストウィキ</a>（英語）</li>
+			<li><a href="http://www.w3.org/2008/webapps/wiki/Testing">W3CのWebAppsテストウィキ</a>（英語）</li>
+		</ul>
+	</section>
+
+</section>
+
+<footer class="slide" title="The End">
+	<h2>ありがとう！</h2>
+	<ul class="semantic-list delayed v-space">
+		<li>スライド：<a href="http://github.com/oli/test-twf">http://github.com/oli/test-twf</a></li>
+		<li>フォロー：<a href="https://twitter.com/boblet">@boblet</a></li>
+	</ul>
+</footer>
+
+<script src="slideshow.js"></script>
+<script>
+var slideshow = new SlideShow();
+</script>
+	
+</body>
+</html>

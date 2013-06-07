@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Specification and Test Lifecycles</title>
+	<style>
+	/* Fonts courtesy of Exljbris and Font Squirrel */
+	@font-face {
+		font-family: 'MuseoSlab';
+		font-weight: normal;
+		font-style: normal;
+		src: url('fonts/Museo_Slab_500.eot');
+		src: local('Museo Slab 500'), local('MuseoSlab-500'), url('fonts/Museo_Slab_500.woff') format('woff'), url('fonts/Museo_Slab_500.otf') format('opentype'), url('fonts/Museo_Slab_500.svg#MuseoSlab-500') format('svg');
+	}
+
+	@font-face {
+		font-family: 'MuseoSlab';
+		font-weight: normal;
+		font-style: italic;
+		src: url('fonts/Museo_Slab_500italic.eot');
+		src: local('Museo Slab 500 Italic'), local('MuseoSlab-500Italic'), url('fonts/Museo_Slab_500_italic.woff') format('woff'), url('fonts/Museo_Slab_500_italic.otf') format('opentype'), url('fonts/Museo_Slab_500_italic.svg#MuseoSlab') format('svg');
+	}
+	@font-face {
+		font-family: 'MuseoSans';
+		font-weight: normal;
+		font-style: normal;
+		src: url('fonts/Museo_Sans_500.eot');
+		src: local('Museo Sans 500'), local('MuseoSans-500'), url('fonts/Museo_Sans_500.woff') format('woff'), url('fonts/Museo_Sans_500.otf') format('opentype'), url('fonts/Museo_Sans_500.svg#MuseoSans-500') format('svg');
+	}
+
+	@font-face {
+		font-family: 'MuseoSans';
+		font-weight: normal;
+		font-style: italic;
+		src: url('fonts/Museo_Sans_500italic.eot');
+		src: local('Museo Sans 500 Italic'), local('MuseoSans-500Italic'), url('fonts/Museo_Sans_500_italic.woff') format('woff'), url('fonts/Museo_Sans_500_italic.otf') format('opentype'), url('fonts/Museo_Sans_500_italic.svg#MuseoSans') format('svg');
+	}
+	</style>
+	<link href="slideshow.css" rel="stylesheet" />
+	<link href="theme.css" rel="stylesheet" />
+	<link href="talk.css" rel="stylesheet" />
+	<script src="prefixfree.min.js"></script>
+</head>
+<body data-duration="15">
+
+<header id="intro" class="slide">
+	<h1>Specification and Test Lifecycles</h1>
+	<p class="center">By Oli Studholme</p>
+</header>
+
+<section>
+	<header class="slide">
+		<h1>Specifications</h1>
+	</header>
+	
+	<section class="slide" title="Why specs?">
+		<h2>Why specs?</h2>
+		<h3 class="delayed center"><em>Interoperability</em></h3>
+		<p class="presenter-notes">Without this we’re screwed. Remember the browser wars</p>
+	</section>
+	
+	<section class="slide">
+		<h2>Where do specs come from?</h2>
+		<ul>
+			<li class="delayed">Implementors</li>
+			<li class="delayed">W3C, for example the CSSWG</li>
+			<li class="delayed">Interested people</li>
+		</ul>
+		<p class="presenter-notes">All three groups should be involved in a spec’s development</p>
+	</section>
+	
+	<section class="slide">
+		<h2>Phases of spec process</h2>
+		<ol>
+			<li class="delayed">Editor’s Draft (ED)</li>
+			<li class="delayed">Working Draft (WD)</li>
+			<li class="delayed">Last Call Working Draft (LC, LCWD)</li>
+			<li class="delayed">Candidate Recommendation (CR)</li>
+			<li class="delayed">Proposed Recommendation (PR)</li>
+			<li class="delayed">Recommendation (REC)</li>
+		</ol>
+		<p class="right">(<a href="http://www.w3.org/Consortium/Process/tr.html">Ref</a>)</p>
+	</section>
+
+	<section class="slide">
+		<h2>Phases of spec process</h2>
+		<p>Recommendation = Specification = Standard</p>
+	</section>
+
+	<section class="slide">
+		<h3>Editor’s Draft (ED)</h3>
+		<ul class="delayed">
+			<li>Anyone can write one, but there’s no official backing yet</li>
+			<li>After the Working Group agrees to work on it, the Editor’s Draft is like the develop branch of a repo</li>
+		</ul>
+		<p class="presenter-notes">→ Exploring</p>
+	</section>
+
+	<section class="slide">
+		<h3>Working Draft (WD)</h3>
+		<ul class="delayed">
+			<li>The working group has agreed to work on the spec</li>
+			<li>The spec’s editors start fleshing out the spec and seeking feedback</li>
+			<li>The first one is “First Public Working Draft”</li>
+		</ul>
+		<p class="presenter-notes">→ Design phase</p>
+	</section>
+
+	<section class="slide">
+		<h3>Last Call Working Draft (LC, LCWD)</h3>
+		<ul class="delayed">
+			<li>The Working Draft is getting ready to implement, and anyone with issues should speak up now</li>
+			<li>A date is set to resolve outstanding issues by</li>
+		</ul>
+		<p class="presenter-notes">→ Transition</p>
+	</section>
+
+	<section class="slide">
+		<h3>Candidate Recommendation (CR)</h3>
+		<ul class="delayed">
+			<li>Tests are created ← that’s us!</li>
+			<li>Call for implementations: user agents start implementing and check against tests</li>
+			<li>Editors address any issues raised by tests or implementation</li>
+			<li>Specs list their “CR exit criteria”, and must be in CR for at least 6 months</li>
+		</ul>
+		<p class="presenter-notes">→ Test, implement, refine</p>
+	</section>
+
+	<section class="slide">
+		<h3>Proposed Recommendation (PR)</h3>
+		<p class="delayed">This requires:</p>
+		<ul class="delayed">
+			<li>Two correct, independent implementations of each feature of the spec</li>
+			<li>No outstanding issues</li>
+			<li><strong>Tests!</strong></li><!-- ← not mentioned in Process <_< -->
+		</ul>
+		<p class="presenter-notes">→ Transition</p>
+	</section>
+
+	<section class="slide">
+		<h3>Recommendation (REC)</h3>
+		<ul class="delayed">
+			<li>A W3C Advisory Committee must approve the transition to REC</li>
+			<li>Only minor changes are made (errata)</li>
+		</ul>
+		<p class="presenter-notes">→ Maintenance</p>
+	</section>
+
+	<section class="slide incomplete">
+		<h3>Phases of the spec process</h3>
+		<p>TODO</p>
+		<p>→ http://www.w3.org/Style/CSS/current-work</p>
+	</section>
+
+	<section class="slide">
+		<h3>Three basic stages</h3>
+		<ul>
+			<li class="delayed">WD — Working Draft → <em>explore, design</em></li>
+			<li class="delayed">CR — Candidate Recommendation → <em>test, implement</em></li>
+			<li class="delayed">TR — Recommendation → <em>maintenance</em></li>
+		</ul>
+		<p class="delayed">http://www.w3.org/TR/… :TR = Trash</p>
+	</section>
+
+	<section class="slide">
+		<h3>WHATWG “living standard”</h3>
+		<ul class="semantic-list delayed">
+			<li>Idea; yet to be specified</li>
+			<li>First draft</li>
+			<li>Working draft</li>
+			<li>Last call for comments</li>
+			<li>Awaiting implementation feedback</li>
+			<li>Implemented and widely deployed</li>
+		</ul>
+		<p class="delayed">→ Basically the same, but happening in one document http://whatwg.org/C/</p>
+		<p class="delayed">→ CSSWG equivalent is http://dev.w3.org/csswg/</p>
+	</section>
+
+	<section class="slide">
+		<h2>Actual process</h2>
+		<ul class="delayed">
+			<li>Implementation and testing often uncovers problems</li>
+			<li>Specs can go backwards, be split or merged</li>
+			<li>Specs can even end up abandoned</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Example: Flexbox</h2>
+		<ul class="semantic-list delayed">
+			<li><em>2004-04-27 WD <code>box</code></em></li>
+			<li><em>2006-09-15 WD <code>box</code></em></li>
+			<li><em>2007-10-05 WD <code>box</code></em></li>
+			<li>2009-07-23 FPWD <code>box</code></li>
+			<li>2011-03-22 WD <code>flexbox</code></li>
+			<li>2011-11-29 WD <code>flexbox</code></li>
+			<li>2012-03-22 WD <code>flexbox</code></li>
+			<li>2012-06-12 LCWD <code>flex</code></li>
+			<li>2012-09-18 CR <code>flex</code></li>
+			<li class="delayed">2013-04-11 ED <code>flex</code></li>
+		</ul>
+	</section>
+
+</section>
+
+<section>
+	<header class="slide">
+		<h1>Tests</h1>
+	</header>
+	
+	<section class="slide">
+		<h2>Testing in the past</h2>
+		<ul>
+			<li>There weren’t many (or any) tests</li>
+			<li>Specs were loose, for example not defining error handling</li>
+			<li>Implementors interpreted the specs differently → pain for us</li>
+			<li>Implementors made their own tests → duplication</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>Why tests?</h2>
+		<ul>
+			<li>Tests help implementors check they’re implementing to spec</li>
+			<li>Tests help developers with improved interoperability</li>
+			<li>Tests also help spec authors identify issues (where the spec is not clear, edge case issues, etc.)</li>
+			<li>The W3C uses these tests to compile implementor reports</li>
+			<li clas="important">The web platform is too broad and complex for us <em>not</em> to have tests</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>Test life cycle</h2>
+		<ul>
+			<li>Once a spec is far enough along (usually CR), interested parties start making tests</li>
+			<li>Tests are submitted to the W3C are checked then added to the W3C’s test suite</li>
+			<li>If the spec changes, affected tests are rewritten</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>What’s a good test?</h2>
+		<ul>
+			<li>Reduced (only tests one thing)</li>
+			<li>Simple</li>
+			<li>Automatic with TestHarness.js, or at least obvious</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>What happens if there are not enough tests?</h2>
+		<ul>
+			<li>Issues in specs → may need to be revised</li>
+			<li>Issues in user agents → interoperability pain, bugs</li>
+			<li>Now specs can’t go from PR to REC without tests</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>For exmaple</h2>
+		<p>“CSS3 Transitions: Thank God We Have A Specification!” by Rodney Rehm</p>
+		<p>→ Rodney turned over the stone of CSS Transitions and Animations, and found a mass of browser bugs and inconsistencies. His article and tests have led to bug reports and CSSWG will address some of the problems he found in the specs</p>
+	</section>
+</section>
+
+<section>
+	<header class="slide">
+		<h1>We need your help!</h1>
+	</header>
+	
+	<section class="slide">
+		<h2>Why help?</h2>
+		<p class="delayed">The main reason for me is interoperability.</p>
+		<ul>
+			<li class="delayed">Tests help interoperability</li>
+			<li class="delayed">Interoperability helps us</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>What now?</h2>
+		<ul>
+			<li>Write tests tomorrow!</li>
+			<li>Write tests <em>after</em> tomorrow!</li>
+			<li>Get involved in the standards process and help Move the Web Forward</li>
+		</ul>
+	</section>
+	
+	<section class="slide">
+		<h2>Conclusion</h2>
+		<p class="important">More tests, and more involvement in the standards process, means a better web platform for <em>everyone</em>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Links</h2>
+		<ul>
+			<li><a href="http://fantasai.inkedblade.net/weblog/2011/inside-csswg/">Inside CSSWG</a>, by fantasai</li>
+			<li><a href="http://dev.w3.org/csswg/">CSS WG Editors’ Drafts</a></li>
+			<li><a href="http://whatwg.org/C/">WHATWG “Living Standard”</a></li>
+			<li><a href="http://w3c-test.org/web-platform-tests/master/">W3C Web Platrofm Tests</a> (also on <a href="https://github.com/w3c/web-platform-tests">GitHub</a>)</li>
+			<li><a href="http://www.w3.org/Style/CSS/Test/">CSS WG Test Suite information</a></li>
+		</ul>
+	</section>
+
+</section>
+
+<footer class="slide" title="The End">
+	<h2>Thank you!</h2>
+	<p>Slides at <a href="http://github.com/oli/test-the-web-forward">http://github.com/oli/test-the-web-forward</a></p>
+</footer>
+
+<script src="slideshow.js"></script>
+<script>
+var slideshow = new SlideShow();
+</script>
+	
+</body>
+</html>

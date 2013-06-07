@@ -8,12 +8,46 @@
 /**
  * Variables
  */
-.slide h2,
-section > header.slide > h1 {
-	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	font-weight: 100;
+#intro {
+	background: rgba(0,0,0,.7);
+	padding: 0;
+	border: 0;
 }
- 
+
+#intro h1 {
+	width: 80%;
+	min-height: 500px;
+	margin: 5% auto 0;
+	font-size: 2.5em;
+	text-align: center;
+	color: white;
+}
+
+#intro p,
+.slide h1 {
+	color: white;
+}
+
+.slide h1,
+.slide h2,
+.slide h3,
+section > header.slide > h1 {
+	text-align: center;
+	font-family: MuseoSlab, 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: normal;
+	letter-spacing: -0.05em;
+}
+
+.slide h3 {
+	margin-bottom: 3rem;
+}
+
+.slide h3 span[lang="en"] {
+	display: block;
+	font-size: 62.5%;
+	letter-spacing: 0;
+}
+
 /**
  * Styles
  */
@@ -21,25 +55,40 @@ section > header.slide > h1 {
 * {
 	padding:0;	
 	margin:0;
-	font:inherit;
+/*	font:inherit;*/
 	color:inherit;
 }
 
 html {
-	background: black url(img/rainbow-wood.jpg) bottom center;
-	background-size: cover;
+	background: black url(img/backgroundPattern.png) repeat;
+	background-size: auto auto;
 }
 
-body {
-	font-family: sans-serif;
+html[lang="ja"] {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+html[lang="en"] {
+	font-family: MuseoSans, sans-serif;
 }
 
 button {
 	padding:.2em .5em;
 }
 
+a,
+a:visited,
 a:hover {
-	text-shadow: 0 0 .5em white, 0 0 1em white;
+	text-decoration: none;
+}
+
+a,
+a:visited {
+	border-bottom: 2px solid #999;
+}
+
+a:hover {
+	text-shadow: 0 0 .5em #333, 0 0 1em #333;
 }
 
 select {
@@ -48,16 +97,13 @@ select {
 
 code, pre, style, textarea, input {
 	font-family: Consolas, 'Andale Mono', 'Courier New', monospace;	
-	background:rgba(0,0,0,.4);
+	background:rgba(0,0,0,.2);
+	border-radius: 0.1em;
 }
 
 code {
 	padding:.2em .2em .1em;
 	white-space: nowrap;
-	border-radius:.2em;
-	border: 1px solid rgba(0,0,0,0.5);
-	background: rgba(0,0,0,0.25);
-	box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 12px rgba(255,255,255,0.15), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
 }
 
 pre, style, textarea {
@@ -85,15 +131,18 @@ strong, b {
 }
 
 	pre strong {
-		text-shadow: 0 0 .6em white;
+		text-shadow: 0 0 .6em #444;
 	}
 
 .slide {
 	padding:0 2.5% 2%;
-	background: rgba(0,0,0,.5);
+	background: hsla(180,95,90,.5);
 	background-clip: padding-box;
-	text-shadow:.05em .05em .1em rgba(0,0,0,.4);
-	color: white;
+	background-size: contain;
+/*	background-position: 50% 50%; */
+	background-repeat: no-repeat;
+	text-shadow:.025em .025em .075em rgba(0,0,0,.4);
+	color: #333;
 	border:30px solid transparent;
 }
 
@@ -104,15 +153,18 @@ strong, b {
 }
 
 	.slide h2 {
-		font-family: 'Helvetica Neue', Helvetica, sans-serif;
-		font-weight: 100;
-		font-size: 1.2in;
+		font-size: 2em;
 	}
-	
+
+	.slide h3,
+	.important {
+		font-size: 1.5em;
+	}
+
 	.slide p,
 	.slide li {
-		font-weight: bold;
-		letter-spacing: -.03em;
+		/*font-weight: bold;*/
+		letter-spacing: -.015em;
 	}
 		
 	.slide > ul {
@@ -137,14 +189,14 @@ strong, b {
 		}
 		
 		.slide > ul > li:before {
-			content:'\2714';
-			color: #a0c12c;
+			content:'•';
+			color: #667;
 			padding-right: .2em;
 		}
 		
 			.slide li li:before {
-				content: '\279C';
-				color: #28bcbc;
+				content: '•';
+				color: #667;
 				padding-right: .2em;
 			}
 			
