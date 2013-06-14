@@ -45,8 +45,10 @@
 <body data-duration="15">
 
 <header id="intro" class="slide">
+	<p class="right" lang="ja"><a href="index.html">日本語</a></p>
 	<h1>Specification and Test Lifecycles</h1>
 	<p class="center">By Oli Studholme</p>
+	<p class="center"><a href="http://ia.net/">iA</a>, <a href="http://html5doctor.com/">HTML5 Doctor</a></p>
 </header>
 
 <section>
@@ -56,7 +58,7 @@
 	
 	<section class="slide" title="Why specs?">
 		<h2>Why specs?</h2>
-		<h3 class="delayed center"><em>Interoperability</em></h3>
+		<h3 class="important delayed center v-space"><em>Interoperability</em></h3>
 		<p class="presenter-notes">Without this we’re screwed. Remember the browser wars</p>
 	</section>
 	
@@ -65,7 +67,7 @@
 		<ul>
 			<li class="delayed">Implementors</li>
 			<li class="delayed">W3C, for example the CSSWG</li>
-			<li class="delayed">Interested people</li>
+			<li class="delayed">Interested people (for example, us)</li>
 		</ul>
 		<p class="presenter-notes">All three groups should be involved in a spec’s development</p>
 	</section>
@@ -85,7 +87,7 @@
 
 	<section class="slide">
 		<h2>Phases of spec process</h2>
-		<p>Recommendation = Specification = Standard</p>
+		<p class="center v-space">Recommendation = Specification = Standard</p>
 	</section>
 
 	<section class="slide">
@@ -147,10 +149,23 @@
 		<p class="presenter-notes">→ Maintenance</p>
 	</section>
 
-	<section class="slide incomplete">
-		<h3>Phases of the spec process</h3>
-		<p>TODO</p>
-		<p>→ http://www.w3.org/Style/CSS/current-work</p>
+	<section class="slide light image" style="background-image: url(img/spec-progress-1.png);">
+		<h3>Spec process overview</h3>
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/spec-progress-2.png);">
+		<h3>Spec process overview</h3>
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/spec-progress-3.png);">
+		<h3>Spec process overview</h3>
+	</section>
+
+	<section class="slide">
+		<h3>Spec process overview</h3>
+		<p class="center v-space">http://www.w3.org/TR/…</p>
+		<p class="center delayed"><strong>TR = Trash</strong></p>
+		<p class="center delayed">Beware of stale specs!</p>
 	</section>
 
 	<section class="slide">
@@ -160,46 +175,76 @@
 			<li class="delayed">CR — Candidate Recommendation → <em>test, implement</em></li>
 			<li class="delayed">TR — Recommendation → <em>maintenance</em></li>
 		</ul>
-		<p class="delayed">http://www.w3.org/TR/… :TR = Trash</p>
 	</section>
 
 	<section class="slide">
 		<h3>WHATWG “living standard”</h3>
-		<ul class="semantic-list delayed">
+		<p>“Living standard” means everything happens in one document: http://whatwg.org/C/</p>
+		<p class="delayed">→ CSSWG equivalent is http://dev.w3.org/csswg/</p>
+		<p class="presenter-notes">WHATWG doesn’t make separate versions of a spec based on those stages. No confusion about which version to look at.</p>
+
+	</section>
+
+	<section class="slide">
+		<h3>WHATWG “living standard”</h3>
+		<ol class="semantic-list delayed">
 			<li>Idea; yet to be specified</li>
 			<li>First draft</li>
 			<li>Working draft</li>
 			<li>Last call for comments</li>
 			<li>Awaiting implementation feedback</li>
 			<li>Implemented and widely deployed</li>
-		</ul>
-		<p class="delayed">→ Basically the same, but happening in one document http://whatwg.org/C/</p>
-		<p class="delayed">→ CSSWG equivalent is http://dev.w3.org/csswg/</p>
+		</ol>
+		<p class="right"><!-- todo: check link -->(<a href="http://whatwg.org/html5faq.html#When_will_HTML5_be_finished.3F">Ref</a>)</p>
+		<p class="presenter-notes">However, WHATWG follows a similar process, just on a per-feature level, and all in the same document.</p>
 	</section>
 
 	<section class="slide">
 		<h2>Actual process</h2>
 		<ul class="delayed">
 			<li>Implementation and testing often uncovers problems</li>
-			<li>Specs can go backwards, be split or merged</li>
-			<li>Specs can even end up abandoned</li>
+			<li>Specs can go backwards too</li>
+			<li>Specs can even be split, merged, or end up abandoned</li>
 		</ul>
 	</section>
 
 	<section class="slide">
 		<h2>Example: Flexbox</h2>
-		<ul class="semantic-list delayed">
-			<li><em>2004-04-27 WD <code>box</code></em></li>
-			<li><em>2006-09-15 WD <code>box</code></em></li>
-			<li><em>2007-10-05 WD <code>box</code></em></li>
-			<li>2009-07-23 FPWD <code>box</code></li>
-			<li>2011-03-22 WD <code>flexbox</code></li>
-			<li>2011-11-29 WD <code>flexbox</code></li>
-			<li>2012-03-22 WD <code>flexbox</code></li>
-			<li>2012-06-12 LCWD <code>flex</code></li>
-			<li>2012-09-18 CR <code>flex</code></li>
-			<li class="delayed">2013-04-11 ED <code>flex</code></li>
-		</ul>
+		<div class="two-up">
+			<div class="left">
+				<ul class="delayed semantic-list">
+					<li><em><time>2004-04-27</time>: WD <code>box</code></em></li>
+					<li><em><time>2006-09-15</time>: WD <code>box</code></em></li>
+					<li><em><time>2007-10-05</time>: WD <code>box</code></em></li>
+				</ul>
+				<ul class="delayed semantic-list">
+					<li><time>2009-07-23</time>: FPWD <code>box</code></li>
+				</ul>
+				<ul class="delayed semantic-list">
+					<li><time>2011-03-22</time>: WD <code>flexbox</code></li>
+					<li><time>2011-11-29</time>: WD <code>flexbox</code></li>
+					<li><time>2012-03-22</time>: WD <code>flexbox</code></li>
+				</ul>
+			</div>
+			<div class="right">
+				<ul class="delayed semantic-list">
+					<li><time>2012-06-12</time>: LCWD <code>flex</code></li>
+					<li><time>2012-09-18</time>: CR <code>flex</code></li>
+				</ul>
+				<ul class="semantic-list delayed">
+					<li><time>2013-04-11</time>: ED <code>flex</code></li>
+					<li>↑ ED is the most up-to-date!</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>Example: Flexbox</h2>
+		<p class="center v-space">CR is <em>not</em> the most recent</p>
+		<p class="center delayed">WD is completely different</p>
+		<p class="center delayed">Don’t forget “TR = Trash”!</p>
+		<p class="presenter-notes"><span lang="en">→ Talk about how ED/WD is like the develop branch of a repo, with CR like a release branch and REC like a tag. The most up-to-date version is develop.</span></p>
 	</section>
 
 </section>
@@ -210,8 +255,8 @@
 	</header>
 	
 	<section class="slide">
-		<h2>Testing in the past</h2>
-		<ul>
+		<h2>Spec test history</h2>
+		<ul class="delayed">
 			<li>There weren’t many (or any) tests</li>
 			<li>Specs were loose, for example not defining error handling</li>
 			<li>Implementors interpreted the specs differently → pain for us</li>
@@ -221,7 +266,7 @@
 	
 	<section class="slide">
 		<h2>Why tests?</h2>
-		<ul>
+		<ul class="delayed">
 			<li>Tests help implementors check they’re implementing to spec</li>
 			<li>Tests help developers with improved interoperability</li>
 			<li>Tests also help spec authors identify issues (where the spec is not clear, edge case issues, etc.)</li>
@@ -232,7 +277,7 @@
 	
 	<section class="slide">
 		<h2>Test life cycle</h2>
-		<ul>
+		<ul class="delayed">
 			<li>Once a spec is far enough along (usually CR), interested parties start making tests</li>
 			<li>Tests are submitted to the W3C are checked then added to the W3C’s test suite</li>
 			<li>If the spec changes, affected tests are rewritten</li>
@@ -241,7 +286,7 @@
 	
 	<section class="slide">
 		<h2>What’s a good test?</h2>
-		<ul>
+		<ul class="delayed">
 			<li>Reduced (only tests one thing)</li>
 			<li>Simple</li>
 			<li>Automatic with TestHarness.js, or at least obvious</li>
@@ -250,7 +295,7 @@
 	
 	<section class="slide">
 		<h2>What happens if there are not enough tests?</h2>
-		<ul>
+		<ul class="delayed">
 			<li>Issues in specs → may need to be revised</li>
 			<li>Issues in user agents → interoperability pain, bugs</li>
 			<li>Now specs can’t go from PR to REC without tests</li>
@@ -258,9 +303,31 @@
 	</section>
 	
 	<section class="slide">
-		<h2>For exmaple</h2>
-		<p>“CSS3 Transitions: Thank God We Have A Specification!” by Rodney Rehm</p>
-		<p>→ Rodney turned over the stone of CSS Transitions and Animations, and found a mass of browser bugs and inconsistencies. His article and tests have led to bug reports and CSSWG will address some of the problems he found in the specs</p>
+		<h2>Lack of tests example</h2>
+		<p class="delayed">CSS3 Transitions vs Rodney Rehm</p>
+		<p class="delayed">Rodney turned over the stone of CSS Transitions and Animations, and found a mass of browser bugs and inconsistencies.</p>
+		<p class="delayed">His article and tests have led to bug reports and proposed spec improvements.</p>
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/css3-animations-tests-detail.png);">
+	</section>
+
+	<!-- redo screenshot from top of page -->
+	<section class="slide light image" style="background-image: url(img/css3-animations-tests-summary.png);">
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/css3-animations-article.png);">
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/css3-animations-test.png);">
+	</section>
+
+	<section class="slide light image" style="background-image: url(img/css3-animations-test-suite.png);">
+	</section>
+
+	<section class="slide">
+		<h2>Lack of tests example</h2>
+		<p>“<a href="http://coding.smashingmagazine.com/2013/04/26/css3-transitions-thank-god-specification/">CSS3 Transitions: Thank God We Have A Specification!</a>” by Rodney Rehm</p>
 	</section>
 </section>
 
@@ -271,43 +338,65 @@
 	
 	<section class="slide">
 		<h2>Why help?</h2>
-		<p class="delayed">The main reason for me is interoperability.</p>
-		<ul>
-			<li class="delayed">Tests help interoperability</li>
-			<li class="delayed">Interoperability helps us</li>
+		<p class="delayed">The main reason for me is interoperability:</p>
+		<ul class="delayed">
+			<li>Tests help interoperability</li>
+			<li>Interoperability helps us</li>
 		</ul>
 	</section>
 	
 	<section class="slide">
 		<h2>What now?</h2>
 		<ul>
-			<li>Write tests tomorrow!</li>
-			<li>Write tests <em>after</em> tomorrow!</li>
-			<li>Get involved in the standards process and help Move the Web Forward</li>
+			<li class="delayed">Write tests tomorrow!</li>
+			<li class="delayed">Write tests <em>after</em> tomorrow!</li>
+			<li class="delayed">Get involved in the standards process and help Move the Web Forward!</li>
 		</ul>
+		<p class="delayed">→ Move the Web Forward http://www.movethewebforward.org/
 	</section>
 	
 	<section class="slide">
-		<h2>Conclusion</h2>
-		<p class="important">More tests, and more involvement in the standards process, means a better web platform for <em>everyone</em>.</p>
+		<h2>Save the Web,<br />Write Some Tests!</h2>
+		<p class="delayed center important">Let’s show our ♡ and help make the web even better!</p>
 	</section>
 
 	<section class="slide">
-		<h2>Links</h2>
+		<h2>Spec links</h2>
 		<ul>
 			<li><a href="http://fantasai.inkedblade.net/weblog/2011/inside-csswg/">Inside CSSWG</a>, by fantasai</li>
-			<li><a href="http://dev.w3.org/csswg/">CSS WG Editors’ Drafts</a></li>
+			<li><a href="http://dev.w3.org/csswg/">CSS Working Group Editors’ Drafts</a></li>
 			<li><a href="http://whatwg.org/C/">WHATWG “Living Standard”</a></li>
 			<li><a href="http://w3c-test.org/web-platform-tests/master/">W3C Web Platrofm Tests</a> (also on <a href="https://github.com/w3c/web-platform-tests">GitHub</a>)</li>
 			<li><a href="http://www.w3.org/Style/CSS/Test/">CSS WG Test Suite information</a></li>
 		</ul>
 	</section>
 
+	<section class="slide">
+		<h2>Spec links</h2>
+		<ul>
+			<li><a href="http://fantasai.inkedblade.net/weblog/2011/inside-csswg/">Inside CSSWG</a>, by fantasai</li>
+			<li><a href="http://dev.w3.org/csswg/">CSS Working Group Editors’ Drafts</a></li>
+			<li><a href="http://whatwg.org/C/">WHATWG “Living Standard”</a></li>
+			<li><a href="http://w3c-test.org/web-platform-tests/master/">W3C Web Platrofm Tests</a> (also on <a href="https://github.com/w3c/web-platform-tests">GitHub</a>)</li>
+			<li><a href="http://www.w3.org/Style/CSS/Test/">CSS WG Test Suite information</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Test links</h2>
+		<ul>
+			<li>CSSWG test suite: <a href="https://github.com/w3c/csswg-test">GitHub</a> and <a href="https://hg.csswg.org/test/">Mecurial</a></li>
+			<li><a href="http://wiki.csswg.org/test">CSSWG test wiki</a></li>
+			<li><a href="https://github.com/w3c/web-platform-tests">W3C Web Platform test suite</a>（GitHub）</li>
+			<li><a href="http://www.w3.org/html/wg/wiki/Testing">W3C HTMLWG test wiki</a></li>
+			<li><a href="http://www.w3.org/2008/webapps/wiki/Testing">W3C WebApps test wiki</a></li>
+		</ul>
+	</section>
 </section>
 
 <footer class="slide" title="The End">
 	<h2>Thank you!</h2>
-	<p>Slides at <a href="http://github.com/oli/test-the-web-forward">http://github.com/oli/test-the-web-forward</a></p>
+	<p>Slides at <a href="http://oli.github.io/test-twf">oli.github.io/test-twf</a></p>
 </footer>
 
 <script src="slideshow.js"></script>

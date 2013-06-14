@@ -44,8 +44,10 @@
 <body data-duration="15">
 
 <header id="intro" class="slide">
+	<p class="right" lang="en"><a href="index-en.html">English</a></p>
 	<h1>仕様書とテストの ライフサイクル</h1>
 	<p class="center">スタッドホルム・オリ</p>
+	<p class="center" lang="en"><a href="http://ia.net/">iA</a>, <a href="http://html5doctor.com/">HTML5 Doctor</a></p>
 </header>
 
 <section>
@@ -178,9 +180,17 @@
 	</section>
 
 	<section class="slide">
-		<h3 lang="en">WHATWG “living standard”</h3>
-		<blockquote class="delayed">
-			<ol class="semantic-list" lang="en">
+		<h3 lang="en">WHATWG “Living standard”</h3>
+		<ul>
+			<li>「生きている仕様」：この段階は同じドキュメントにあります：http://whatwg.org/C/</li>
+			<li class="delayed">CSSWGの場合：http://dev.w3.org/csswg/</li>
+		</ul>
+		<p class="presenter-notes">WHATWG doesn’t make separate versions of a spec based on those stages. No confusion about which version to look at.</p>
+	</section>
+
+	<section class="slide">
+		<h3 lang="en">WHATWG “Living standard”</h3>
+			<ol class="semantic-list delayed" lang="en">
 				<li>Idea; yet to be specified</li>
 				<li>First draft</li>
 				<li>Working draft</li>
@@ -189,15 +199,7 @@
 				<li>Implemented and widely deployed</li>
 			</ol>
 			<p class="right">(<a href="http://www.html5.jp/trans/whatwg_html5faq.html#When_will_HTML5_be_finished.3F">Ref</a>)</p>
-		</blockquote>
-	</section>
-
-	<section class="slide">
-		<h3 lang="en">WHATWG “living standard”</h3>
-		<ul>
-			<li>「生きている仕様」：この段階は同じドキュメントにあります：http://whatwg.org/C/</li>
-			<li class="delayed">CSSWGの場合：http://dev.w3.org/csswg/</li>
-		</ul>
+		<p class="presenter-notes">However, WHATWG follows a similar process, just on a per-feature level, and all in the same document.</p>
 	</section>
 
 	<section class="slide">
@@ -214,28 +216,28 @@
 		<div class="two-up">
 			<div class="left">
 				<ul class="delayed semantic-list">
-					<li><em><time>2004-04-27:</time> WD <code>box</code></em></li>
-					<li><em><time>2006-09-15:</time> WD <code>box</code></em></li>
-					<li><em><time>2007-10-05:</time> WD <code>box</code></em></li>
+					<li><em><time>2004-04-27</time>: WD <code>box</code></em></li>
+					<li><em><time>2006-09-15</time>: WD <code>box</code></em></li>
+					<li><em><time>2007-10-05</time>: WD <code>box</code></em></li>
 				</ul>
 				<ul class="delayed semantic-list">
-					<li><time>2009-07-23:</time> FPWD <code>box</code></li>
+					<li><time>2009-07-23</time>: FPWD <code>box</code></li>
 				</ul>
 				<ul class="delayed semantic-list">
-					<li><time>2011-03-22:</time> WD <code>flexbox</code></li>
-					<li><time>2011-11-29:</time> WD <code>flexbox</code></li>
-					<li><time>2012-03-22:</time> WD <code>flexbox</code></li>
+					<li><time>2011-03-22</time>: WD <code>flexbox</code></li>
+					<li><time>2011-11-29</time>: WD <code>flexbox</code></li>
+					<li><time>2012-03-22</time>: WD <code>flexbox</code></li>
 				</ul>
 			</div>
 			<div class="right">
-			<ul class="delayed semantic-list">
-				<li><time>2012-06-12:</time> LCWD <code>flex</code></li>
-				<li><time>2012-09-18:</time> CR <code>flex</code></li>
-			</ul>
-			<ul class="semantic-list delayed">
-				<li><time>2013-04-11:</time> ED <code>flex</code></li>
-				<li>↑ 最新スペックは下書き</li>
-			</ul>
+				<ul class="delayed semantic-list">
+					<li><time>2012-06-12</time>: LCWD <code>flex</code></li>
+					<li><time>2012-09-18</time>: CR <code>flex</code></li>
+				</ul>
+				<ul class="semantic-list delayed">
+					<li><time>2013-04-11</time>: ED <code>flex</code></li>
+					<li>↑ 最新スペックは下書き</li>
+				</ul>
 			</div>
 		</div>
 	</section>
@@ -245,6 +247,7 @@
 		<p class="center v-space">CRでも最新じゃない</p>
 		<p class="center delayed">WDは全然違います</p>
 		<p class="center delayed">「TR = <span lang="en">Trash</span>」を忘れないでね！</p>
+		<p class="presenter-notes"><span lang="en">→ Talk about how ED/WD is like the develop branch of a repo, with CR like a release branch and REC like a tag. The most up-to-date version is develop.</span></p>
 	</section>
 
 </section>
@@ -271,7 +274,7 @@
 			<li>デヴェロパーに相互運用性</li>
 			<li>スペックの仕様策定者にも確認</li>
 			<li>W3Cはテストスイートを使って、インプレメンタレポートを作る</li>
-			<li clas="important">ウェブはもう広すぎる：テストは必要</li><!-- todo: check JP and formatting -->
+			<li clas="important">ウェブプラットフォームはもう広すぎる：テストは必要</li><!-- todo: check JP and formatting -->
 		</ul>
 	</section>
 	
@@ -307,31 +310,32 @@
 		<p class="delayed" lang="en">CSS3 Transitions vs Rodney Rehm</p>
 		<p class="delayed">ロッドニーさんはCSSアニメーションのスペックを細かくテストして、いろんなブラウザーバク、スペック問題、相互運用性問題を見つけた。</p>
 		<p class="delayed">彼のテストはテストスイートに入っていて、そして、バグリポートとスペック修正も出ます。</p>
+		<p class="presenter-notes"><span lang="en">→ Talk about Rodney Rehm turning over the stone of CSS Animations plus JS, and finding a lot of creepy-crawlies</span></p>
 	</section>
 
-	<section class="slide light image" style="background-image: url(img/css3-animations-test.png);">
-	</section>
 
 	<section class="slide light image" style="background-image: url(img/css3-animations-tests-detail.png);">
 	</section>
 
+	<!-- redo screenshot from top of page -->
 	<section class="slide light image" style="background-image: url(img/css3-animations-tests-summary.png);">
 	</section>
 
 	<section class="slide light image" style="background-image: url(img/css3-animations-article.png);">
 	</section>
 
+	<section class="slide light image" style="background-image: url(img/css3-animations-test.png);">
+	</section>
+
 	<section class="slide light image" style="background-image: url(img/css3-animations-test-suite.png);">
 	</section>
-  
+
 	<section class="slide">
 		<h2>テストが足りない例</h2>
 		<p lang="en">“<a href="http://coding.smashingmagazine.com/2013/04/26/css3-transitions-thank-god-specification/">CSS3 Transitions: Thank God We Have A Specification!</a>” by Rodney Rehm</p>
 
 	</section>
-  
 
-	<!-- Todo: article screenshot, tests list -->
 </section>
 
 <section>
@@ -378,7 +382,7 @@
 	<section class="slide">
 		<h2>テストのリンク</h2>
 		<ul>
-			<li>CSSWGのテストスイート：<a href="https://hg.csswg.org/test/">Mecurial</a>と<a href="https://github.com/w3c/csswg-test">GitHub</a></li>
+			<li>CSSWGのテストスイート：<a href="https://github.com/w3c/csswg-test">GitHub</a>と<a href="https://hg.csswg.org/test/">Mecurial</a></li>
 			<li><a href="http://wiki.csswg.org/test">CSSWGのテストウィキ</a>（英語）</li>
 			<li><a href="https://github.com/w3c/web-platform-tests">W3Cの「Web Platform」テストスイート</a>（GitHub）</li>
 			<li><a href="http://www.w3.org/html/wg/wiki/Testing">W3CのHTMLWGのテストウィキ</a>（英語）</li>
@@ -391,7 +395,7 @@
 <footer class="slide" title="The End">
 	<h2>ありがとう！</h2>
 	<ul class="semantic-list delayed v-space">
-		<li>スライド：<a href="http://oli.github.io/test-twf">http://github.com/oli/test-twf</a></li>
+		<li>スライド：<a href="http://oli.github.io/test-twf">oli.github.io/test-twf</a></li>
 		<li>フォロー：<a href="https://twitter.com/boblet">@boblet</a></li>
 	</ul>
 </footer>
